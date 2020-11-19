@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // faster/easier way to access/unpack variables from arrays, objects
+
+        const fruits = ['orange', 'banana', 'lemon'];
+
+        const friends = ['john', 'peter', 'bob', 'anna', 'kelly'];
+
+        const [f1, f2, f3, f4, f5, f6] = friends;
+        console.log(f1, f2, f3, f4, f5, f6);
+
+        // leaving space to skip an element
+        const [fruit1, , fruit2] = fruits;
+        console.log(fruit1, fruit2);
+
+        // swaping two values without third variable
+        let first = 'One';
+        let second = 'Two';
+        [second, first] = [first, second];
+        console.log(first, second);
+        // output - Two One
+    </script>
+</body>
+</html>
