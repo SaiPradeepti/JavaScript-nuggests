@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          text-align: center;
+          padding-top: 10rem;
+        }
+        button {
+          display: inline-block;
+          margin: 1rem 0.5rem;
+          padding: 0.25rem 0.5rem;
+        }
+      </style>
+</head>
+<body>
+    <h1>Unique Values</h1>
+    <div class="result"></div>
+    <script>
+        // Unique Values
+        const menu = [
+        {
+            name: 'pancakes',
+            category: 'breakfast',
+        },
+        {
+            name: 'burger',
+            category: 'lunch',
+        },
+        {
+            name: 'steak',
+            category: 'dinner',
+        },
+        {
+            name: 'bacon',
+            category: 'breakfast',
+        },
+        {
+            name: 'eggs',
+            category: 'breakfast',
+        },
+        {
+            name: 'pasta',
+            category: 'dinner',
+        },
+        ];
+        
+        const names = menu.map(item => item.name);
+        console.log(names);
+
+        // Set returns only unique values in an array (ES6 feature)
+        // Set returns object, to convert it into array use spread operator
+        // adding 'all' as an extra category
+        const categories = ['all', ...new Set(menu.map(item => item.category))];
+        console.log(categories);
+
+        document.querySelector('.result').innerHTML = categories.map(category => {
+            return `<button>${category}</button>`
+        }).join(' ');
+
+        
+    </script>
+</body>
+</html>
