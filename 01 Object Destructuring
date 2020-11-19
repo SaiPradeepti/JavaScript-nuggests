@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Destructuring - faster/easier way to access/unpack variables from arrays, objects
+
+        const bob = {
+            first: 'bob',
+            last: 'sanders',
+            city: 'chicago',
+            siblings: {
+                sister: 'jane'
+            }
+        };
+
+        // const {first, last, city} = bob;
+        // console.log(first, last, city);
+
+        // accessing an element in object that doesn't exists
+        // const {first, last, city, zip} = bob;
+        // console.log(first, last, city, zip);
+        
+        //order of accessing elements doesn't matter
+        // const {last, first, city} = bob;
+        // console.log(first, last, city);
+
+        //giving alias names
+        // const {first:firstname, last, city} = bob;
+        // console.log(firstname, last, city);
+                
+        // const {first, last, city, siblings:{sister}} = bob;
+        // console.log(first, last, city, sister);
+        
+        // giving alias to sister property in the object
+        // const {first, last, city, siblings:{sister:sis}} = bob;
+        // console.log(first, last, city, sis);
+
+        // passing object to a function
+        // function printPerson(person){
+        //     console.log(person.first);
+        // }
+        // printPerson(bob);
+        
+        // one way of accessing properties using destructuring
+        // function printPerson(person){
+        //     const {first, last} = person;
+        //     console.log(first);
+        //     console.log(last);
+        // }
+        // printPerson(bob);
+
+        // another way of accessing properties using destructuring
+        function printPerson({first, last, city, siblings:{sister:sis}}){
+            console.log(first, last, city, sis);
+        }
+        printPerson(bob);
+    </script>
+</body>
+</html>
