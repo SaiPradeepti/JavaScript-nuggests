@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rest Operator...
+        // gathers/collects items
+        // destructuring, functions
+        // placement important, careful with the same name
+        // rest when declare function, spread when invoke the function
+
+        // rest operator collects rest of the items so it must be placed at the end
+
+        // arrays
+        const fruits = ['apple', 'orange', 'lemon', 'banana', 'pear'];
+        const [first, second, ...rest] = fruits;
+        console.log(first, second, rest);
+
+        const movies = ['Martian', 'Gravity', 'Harry Potter', 'Narnia', 'Lucy'];
+        const [mov1, ...restOfTheMovies] = movies;
+        const favMovie = restOfTheMovies.find(movie => movie.match(/Potter/));
+        console.log(`My favorite movie is ${favMovie}`);
+
+        // Objects
+        const person = { name: 'john', lastName: 'smith', job: 'developer' };
+        const { job, ...restOfTheObject } = person;
+        console.log(job, restOfTheObject);
+
+        // functions
+        const getAverage = (name, ...scores) => { //this is rest operator ...used at function declaration
+        console.log(name);
+        console.log(scores);
+        const average = (scores.reduce( (acc,curr) => {return acc +=curr}, 0))/scores.length;
+        console.log(average);
+        }
+
+        // getAverage(person.name,67,78,89,78);
+
+        const testScores = [67, 78, 99, 100];
+        getAverage(person.name, ...testScores); // this is spread operator ...used at function call
+        // rest when declare function, spread when invoke the function
+    </script>
+</body>
+</html>
