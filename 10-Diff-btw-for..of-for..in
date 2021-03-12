@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<script>
+
+      const obj = {
+        key1: "one",
+        key2: "two"
+      };
+
+      for (let value in obj) {
+        console.log(value);
+      }
+
+      const arr = ["A", "B", "C"];
+
+      for (const value of arr) {
+        console.log(value);
+      }
+	</script>
+</body>
+
+</html>
