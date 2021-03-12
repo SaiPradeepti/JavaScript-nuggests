@@ -11,7 +11,10 @@
 	<div id="app"></div>
 
 	<script>
-
+      //Objects in JavaScript aren't iterable
+      //for in loop will iterate over the enumerable properties of the object and give us that property at each iteration of the loop
+      //For objects with a defined iterator though, like an array, we can use a for of loop to loop over each element in order. 
+      //For of loops also work for everything that has a defined iterator, which includes strings. 
       const obj = {
         key1: "one",
         key2: "two"
